@@ -127,7 +127,7 @@ codecov = { repository = "clap-rs/clap-verbosity-flag" }
 default = ["log"]
 log = ["dep:log"]
 tracing = ["dep:tracing-core"]
-schemars = ["dep:schemars","dep:serde"]
+schemars = ["dep:schemars"]
 serde = ["dep:serde"]
 
 [dependencies]
