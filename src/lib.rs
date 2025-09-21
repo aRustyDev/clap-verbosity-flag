@@ -110,8 +110,8 @@ pub mod tracing;
 /// Logging flags to `#[command(flatten)]` into your CLI
 #[derive(clap::Args, Debug, Clone, Copy, Default, PartialEq, Eq)]
 #[command(about = None, long_about = None)]
-#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(
     feature = "serde",
     serde(
@@ -316,10 +316,7 @@ impl fmt::Display for VerbosityFilter {
 
 /// Default to [`VerbosityFilter::Error`]
 #[derive(Copy, Clone, Debug, Default, PartialEq, Eq)]
-#[cfg_attr(
-    feature = "schemars",
-    derive(schemars::JsonSchema, serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub struct ErrorLevel;
 
 impl LogLevel for ErrorLevel {
@@ -330,10 +327,7 @@ impl LogLevel for ErrorLevel {
 
 /// Default to [`VerbosityFilter::Warn`]
 #[derive(Copy, Clone, Debug, Default, PartialEq, Eq)]
-#[cfg_attr(
-    feature = "schemars",
-    derive(schemars::JsonSchema, serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub struct WarnLevel;
 
 impl LogLevel for WarnLevel {
@@ -344,10 +338,7 @@ impl LogLevel for WarnLevel {
 
 /// Default to [`VerbosityFilter::Info`]
 #[derive(Copy, Clone, Debug, Default, PartialEq, Eq)]
-#[cfg_attr(
-    feature = "schemars",
-    derive(schemars::JsonSchema, serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub struct InfoLevel;
 
 impl LogLevel for InfoLevel {
@@ -358,10 +349,7 @@ impl LogLevel for InfoLevel {
 
 /// Default to [`VerbosityFilter::Debug`]
 #[derive(Copy, Clone, Debug, Default, PartialEq, Eq)]
-#[cfg_attr(
-    feature = "schemars",
-    derive(schemars::JsonSchema, serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub struct DebugLevel;
 
 impl LogLevel for DebugLevel {
@@ -372,10 +360,7 @@ impl LogLevel for DebugLevel {
 
 /// Default to [`VerbosityFilter::Trace`]
 #[derive(Copy, Clone, Debug, Default, PartialEq, Eq)]
-#[cfg_attr(
-    feature = "schemars",
-    derive(schemars::JsonSchema, serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub struct TraceLevel;
 
 impl LogLevel for TraceLevel {
@@ -386,10 +371,7 @@ impl LogLevel for TraceLevel {
 
 /// Default to [`VerbosityFilter::Off`] (no logging)
 #[derive(Copy, Clone, Debug, Default, PartialEq, Eq)]
-#[cfg_attr(
-    feature = "schemars",
-    derive(schemars::JsonSchema, serde::Serialize, serde::Deserialize)
-)]
+#[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub struct OffLevel;
 
 impl LogLevel for OffLevel {
